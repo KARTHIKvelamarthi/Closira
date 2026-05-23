@@ -1,0 +1,83 @@
+{
+  "business_name": "NexHub Co-Working Space",
+  "tagline": "Flexible workspaces for builders, freelancers, and growing teams.",
+  "hours": {
+    "weekdays": "Mon–Fri, 7 am–10 pm",
+    "weekends": "Sat–Sun, 9 am–6 pm",
+    "holidays": "Closed on public holidays unless otherwise announced"
+  },
+  "location": "12 Harbour Lane, Floor 3, Mumbai 400001. Nearest metro: CST (5 min walk).",
+  "contact": {
+    "whatsapp": "+91-98765-43210",
+    "email": "hello@nexhub.in",
+    "website": "www.nexhub.in"
+  },
+  "plans": [
+    {
+      "name": "Hot Desk",
+      "price": "₹499/day or ₹6,999/month",
+      "includes": [
+        "Shared desk",
+        "High-speed WiFi (500 Mbps)",
+        "Tea & coffee",
+        "Locker access"
+      ],
+      "best_for": "Freelancers and remote workers who need occasional workspace"
+    },
+    {
+      "name": "Dedicated Desk",
+      "price": "₹11,999/month",
+      "includes": [
+        "Reserved desk",
+        "24/7 access",
+        "High-speed WiFi",
+        "2 meeting room hours/month",
+        "Storage cabinet"
+      ],
+      "best_for": "Professionals who need a consistent daily workspace"
+    },
+    {
+      "name": "Private Cabin",
+      "price": "₹24,999/month (2-person) or ₹39,999/month (4-person)",
+      "includes": [
+        "Lockable private office",
+        "Dedicated internet line",
+        "5 meeting room hours/month",
+        "Priority support"
+      ],
+      "best_for": "Small teams or businesses needing privacy"
+    },
+    {
+      "name": "Meeting Rooms",
+      "price": "₹500/hour (4-seater) or ₹900/hour (8-seater)",
+      "includes": [
+        "AV setup",
+        "Whiteboard",
+        "Video conferencing equipment"
+      ],
+      "best_for": "Client meetings, team syncs, interviews"
+    }
+  ],
+  "amenities": [
+    "500 Mbps fibre WiFi + backup connection",
+    "24/7 CCTV and keycard access (Dedicated and Cabin members)",
+    "Printing and scanning (₹5/page colour, ₹2/page B&W)",
+    "Pantry with unlimited tea, coffee, and filtered water",
+    "Phone booths for private calls (free, bookable via app)",
+    "Bike parking (free), Car parking (₹150/day)"
+  ],
+  "booking": {
+    "hot_desk": "Walk-in or book via website/WhatsApp. Payment upfront.",
+    "dedicated_and_cabin": "Fill inquiry form on website. Team will respond within 4 business hours.",
+    "meeting_rooms": "Book via app or WhatsApp. Minimum 1-hour booking.",
+    "trial": "Free half-day trial available for Dedicated Desk and Cabin plans on weekdays."
+  },
+  "cancellation_policy": {
+    "hot_desk": "Non-refundable once booked.",
+    "monthly_plans": "30-day written notice required to cancel monthly plans. No mid-month refunds.",
+    "meeting_rooms": "Free cancellation up to 2 hours before. 50% charge within 2 hours."
+  },
+  "guest_policy": "Hot Desk and Dedicated members can bring 1 guest per day at no charge. Additional guests are ₹200/person/day.",
+  "discounts_policy": "We don't offer published student discounts. Customers must connect with hello@nexhub.in for special queries.",
+  "business_registration_policy": "Virtual office and business address registration services are available. Inquiries must be sent to hello@nexhub.in."
+}

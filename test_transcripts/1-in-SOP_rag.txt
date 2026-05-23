@@ -1,0 +1,7 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: where are you located?
+
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  NexHub Co-Working Space is located at 12 Harbour Lane, Floor 3, Mumbai 400001. We are located near the CST metro station, which is about a 5-minute walk away.

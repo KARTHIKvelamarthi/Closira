@@ -1,0 +1,26 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: where are you located?
+
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  NexHub Co-Working Space is located at 12 Harbour Lane, Floor 3, Mumbai 400001. Nearest metro: CST (5 min walk).
+
+You: this is a horrible location and you are the worst bot ever
+
+  [LOG] Escalation recorded → Customer expressed frustration and anger
+
+Closira [ESCALATION] (confidence: 0.00)
+  I apologize for any frustration this has caused. Let me immediately connect you with one of our team members who can help address your concerns.
+
+  WARNING: ESCALATION TRIGGERED
+  Reason: Customer expressed frustration and anger
+  -> Handing off to a human agent. The conversation log has been saved.
+
+[Session terminated due to critical escalation. Generating summary...]
+
+Session Summary
+  **Customer Intent:** Find location and express frustration
+  **Key Details Collected:** None
+  **SOP Gaps Identified:** None
+  **Recommended Next Action:** A human manager should contact the customer immediately to resolve their complaints about the location.

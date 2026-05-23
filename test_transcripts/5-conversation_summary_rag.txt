@@ -1,0 +1,41 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: i want to book a private cabin
+
+Closira [RECOMMENDING_PLAN] (confidence: 1.00)
+  We have private cabins available for booking. Our plans include a 2-person cabin for ₹24,999/month and a 4-person cabin for ₹39,999/month. How many people are on your team?
+
+You: we are a team of 4
+
+Closira [RECOMMENDING_PLAN] (confidence: 1.00)
+  Based on your team size of 4, I would recommend our 4-person cabin plan. It's available for ₹39,999/month. Would you like to book it or compare other options?
+
+You: what is the price
+
+Closira [RECOMMENDING_PLAN] (confidence: 1.00)
+  Our 4-person private cabin plan is priced at ₹39,999/month. This includes dedicated internet line, 5 meeting room hours/month, and priority support.
+
+You: ok thank you
+
+  [LOG] Session summary saved → session 20260523_214404
+
+Closira [CLOSING] (confidence: 1.00)
+  You're welcome! It was a pleasure assisting you.
+
+Session complete. Thank you!
+
+Session Summary
+
+  [LOG] Session summary saved → session 20260523_214404
+  **Session Summary: **
+
+**Customer Intent:** Book a private cabin
+
+**Key Details Collected:**
+- Team size: 4
+- Workspace type: Private cabin
+
+**SOP Gaps Identified:** None
+
+**Recommended Next Action:** NexHub team should contact the customer to confirm their booking of the 4-person private cabin.

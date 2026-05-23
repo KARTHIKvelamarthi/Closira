@@ -1,0 +1,29 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: do you provide private cabins
+
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Yes, we do provide private cabins. Our cabin plans come in 2-person and 4-person options.
+
+You: what is the size of those
+
+  [LOG] Escalation recorded → Cabin sizes/dimensions/square footage are not mentioned in the SOP.     
+
+Closira [ESCALATION] (confidence: 0.00)
+  The size of our cabins is not specified in the SOP. I'm unable to provide that information.
+
+  WARNING: ESCALATION TRIGGERED
+  Reason: Cabin sizes/dimensions/square footage are not mentioned in the SOP.
+  -> Handing off to a human agent. The conversation log has been saved.
+
+[Inquiry flagged for human follow-up]
+
+You: you are the worst
+
+Closira [ESCALATION] (confidence: 0.00)
+  I apologize if I've fallen short of your expectations. However, I'm here to help with any questions you have about our services.
+
+  WARNING: ESCALATION TRIGGERED
+  Reason: User expressed frustration and dissatisfaction
+  -> Handing off to a human agent. The conversation log has been saved.

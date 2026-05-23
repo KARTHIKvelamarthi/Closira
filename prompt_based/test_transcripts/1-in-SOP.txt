@@ -1,0 +1,7 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: is dedicated desk available
+
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Yes, Dedicated Desk is available at NexHub Co-Working Space. It includes a reserved desk, 24/7 access, high-speed WiFi, 2 meeting room hours/month, and storage cabinet.

@@ -1,0 +1,10 @@
+[
+  {
+    "session_id": "20260523_170230",
+    "timestamp": "2026-05-23T17:08:43.675596",
+    "stage_at_escalation": "escalation",
+    "confidence_score": 0.0,
+    "reason": "Information not available in SOP",
+    "trigger_message": "What is the size of the private cabin?"
+  }
+]

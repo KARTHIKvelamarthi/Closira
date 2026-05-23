@@ -1,0 +1,15 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: do you have breakfast options?
+
+  [LOG] Escalation recorded → Breakfast options not mentioned in SOP
+
+Closira [ESCALATION] (confidence: 0.00)
+  I'm sorry, but we do not have information about breakfast options in our Standard Operating Procedure. Please contact our support team at hello@nexhub.in or via WhatsApp at +91-98765-43210 for assistance.
+
+  WARNING: ESCALATION TRIGGERED
+  Reason: Breakfast options not mentioned in SOP
+  -> Handing off to a human agent. The conversation log has been saved.
+
+[Inquiry flagged for human follow-up]

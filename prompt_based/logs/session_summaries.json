@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": "20260523_191521",
+    "timestamp": "2026-05-23T19:29:29.112984",
+    "total_turns": 6,
+    "final_stage": "summary",
+    "escalated": false,
+    "qualification_data": {
+      "business_type": null,
+      "team_size": "4",
+      "workspace_type": "private cabins",
+      "booking_duration": null
+    },
+    "unanswered_count": 0
+  }
+]

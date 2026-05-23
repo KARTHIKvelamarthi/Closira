@@ -1,0 +1,5 @@
+# Preferred Python Version: Python 3.10 or higher (compatible with 3.8+)
+# Install using: pip install -r requirements.txt
+
+openai
+sentence-transformers

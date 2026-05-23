@@ -1,0 +1,17 @@
+Closira [ANSWERING_QUESTION] (confidence: 1.00)
+  Hello! Welcome to NexHub Co-Working Space. I'm Closira, your friendly AI customer support assistant. How can I help you today?
+
+You: i am looking for private cabins
+
+Closira [RECOMMENDING_PLAN] (confidence: 1.00)
+  We have private cabins available for rent. Can you please let me know how many people will be occupying the cabin?
+
+You: we are a team of 4
+
+Closira [RECOMMENDING_PLAN] (confidence: 1.00)
+  We have private cabins available for rent. Since you're a team of 4, I'd recommend our 4-person cabin plan. It includes dedicated internet line, 5 meeting room hours/month, and priority support.
+
+You: what is the price
+
+Closira [RECOMMENDING_PLAN] (confidence: 1.00)
+  Our 4-person private cabin plan is priced at ₹39,999/month. This includes dedicated internet line, 5 meeting room hours/month, and priority support.

@@ -1,0 +1,22 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment configurations and virtualenvs
+.env
+.venv/
+venv/
+ENV/
+env/
+.conda/
+ActiveCode/
+
+# IDE configurations
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

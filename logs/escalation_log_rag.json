@@ -1,0 +1,10 @@
+[
+  {
+    "session_id": "20260523_214404",
+    "timestamp": "2026-05-23T22:09:09.755377",
+    "stage_at_escalation": "escalation",
+    "confidence_score": 0.0,
+    "reason": "Breakfast options not mentioned in SOP",
+    "trigger_message": "do you have breakfast options?"
+  }
+]
