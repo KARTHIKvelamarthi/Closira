@@ -58,10 +58,10 @@ flowchart TD
     %% Case routing
     AgentRAG -->|Case: Normal Turn| MainRAG
     
-    AgentRAG -->|Case: Escalation (low confidence / unlisted detail)| LoggerRAG["logger_rag.py (log_escalation)"]
+    AgentRAG -->|Case: Escalation - low confidence or unlisted detail| LoggerRAG["logger_rag.py (log_escalation)"]
     LoggerRAG -->|Notifies handoff| MainRAG
     
-    AgentRAG -->|Case: Session Complete (closing input)| MainRAGSummary["main_rag.py (Triggers generate_summary)"]
+    AgentRAG -->|Case: Session Complete - closing input| MainRAGSummary["main_rag.py (Triggers generate_summary)"]
     MainRAGSummary -->|Requests final summary| AgentRAG
     AgentRAG -->|Writes summary| LoggerRAG
 ```
