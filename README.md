@@ -29,6 +29,11 @@ Designed to scale to larger SOP manuals. Instead of sending the entire SOP to th
 A simpler configuration where the entire SOP text is rendered and injected directly into the system prompt on every turn. Useful for small SOP files that fit comfortably within an LLM's context window.
 * **Files**: Located inside the `prompt_based/` folder.
 
+> [!NOTE]
+> **Baseline Calibration & Evaluation Strategy**
+> 
+> The prompt-based implementation acts as our **"Ground Truth" control baseline**. Since it feeds the entire SOP into the LLM context, it represents the maximum accuracy potential of the assistant. We compared our RAG pipeline's outputs against this full-context baseline to calibrate retrieval similarity thresholds. Testing shows that the dynamic RAG pipeline produces nearly identical, highly accurate responses, validating the precision of our semantic search while drastically reducing context size and token costs.
+
 ---
 
 ## 3. RAG System Data Flow (Input to Output)
