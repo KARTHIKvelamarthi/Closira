@@ -70,12 +70,32 @@ When a user expresses interest in booking or plans, the agent transitions to `re
 * Ask friendly, open-ended follow-up questions to fill in missing details (e.g., asking for team size if they mention a cabin).
 * Ask only **one question at a time** to avoid sounding like an interrogation.
 
+### Proactive Qualification Rule
+Rather than waiting for the user to volunteer details, the prompt
+instructs the model to look up the relevant SOP entry when interest
+is expressed, identify what variables are needed for that specific
+service (e.g. team size for cabins, duration for meeting rooms,
+frequency for hot desk), and ask about those specifics one at a time.
+
+Example: User says "I'm interested in a private cabin"
+→ SOP shows cabins come in 2-person and 4-person options
+→ Agent asks: "We have cabins for teams of 2 or 4 — how many are on your team?"
+
+This was added because testing showed the model would passively
+collect details only if the user volunteered them, never asking
+proactively. The explicit rule fixes this behaviour.
+
 ### Escalation Triggers
 Handoffs are triggered by the following conditions:
 * **Missing SOP Information**: Confidence score drops to 0.0.
 * **Negative Sentiment / Frustration**: If the user shows anger, the model detects the tone shift, sets `escalate` to true, and transitions to the escalation stage.
 * **Direct Handoff Request**: If the user asks to speak to a human.
 * **Unanswered Counts**: If the model scores a low confidence (< 0.6) on two consecutive turns, the python runtime automatically overrides and escalates.
+Additional escalation triggers enforced by the prompt:
+- Complaint about staff, cleanliness, or facilities
+- Medical emergency or safety concern  
+- Legal, contractual, or enterprise deal questions
+- Pricing negotiation requests
 
 ### Closing and Summary Generation
 When the user says "thank you" or indicates they are done, the agent transitions to `closing`. The application then requests a final summary. 
@@ -85,5 +105,14 @@ The prompt instructs the model to populate the `message` field with a Markdown s
 * **Key Details Collected**
 * **SOP Gaps Identified**
 * **Recommended Next Action**
+
+### Session Completion Detection
+The prompt includes an explicit keyword list to detect when a user
+is wrapping up: "thank you", "thanks", "that's all", "bye",
+"no more questions", "ok thank you". When any of these are detected,
+the model sets session_complete=true and stage="closing".
+
+This explicit list was necessary because smaller local models
+(Llama 3.1, Gemma) often miss implicit closing cues without it.
 
 To prevent the model from nesting JSON objects inside the `message` key (which confuses parser scripts), the summary prompt explicitly forbids returning a dictionary structure under `"message"` and mandates a raw Markdown string.
