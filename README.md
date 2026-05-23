@@ -35,36 +35,40 @@ A simpler configuration where the entire SOP text is rendered and injected direc
 
 When a user sends a message, execution flows between the Python modules based on the conversational state:
 
-```mermaid
-flowchart TD
-    UserInput([User Message]) --> MainRAG["main_rag.py (CLI Chat Loop)"]
-    
-    MainRAG -->|1. Calls chat| AgentRAG["agent_rag.py (ClosiraRAGAgent)"]
-    
-    AgentRAG -->|2. Calls retrieve| RetrieverRAG["retriever_rag.py (ClosiraRAGRetriever)"]
-    
-    %% SOP parsing dependency
-    RetrieverRAG -->|3. Loads chunks| SopRAG["sop_rag.py (Chunker)"]
-    SopRAG -->|4. Reads| SopJson[(sop.json)]
-    
-    %% Context Construction
-    RetrieverRAG -->|5. Returns matched chunks| AgentRAG
-    AgentRAG -->|6. Generates prompt| SysPrompt["prompts/system_prompt_rag.py (build_system_prompt_rag)"]
-    
-    %% LLM Execution
-    AgentRAG -->|7. Sends context + history| LLM([Local Llama or OpenAI])
-    LLM -->|8. Returns structured JSON| AgentRAG
-    
-    %% Case routing
-    AgentRAG -->|Case: Normal Turn| MainRAG
-    
-    AgentRAG -->|Case: Escalation - low confidence or unlisted detail| LoggerRAG["logger_rag.py (log_escalation)"]
-    LoggerRAG -->|Notifies handoff| MainRAG
-    
-    AgentRAG -->|Case: Session Complete - closing input| MainRAGSummary["main_rag.py (Triggers generate_summary)"]
-    MainRAGSummary -->|Requests final summary| AgentRAG
-    AgentRAG -->|Writes summary| LoggerRAG
 ```
+[User Message (Input)]
+   │
+   └──► Captured by main_rag.py
+         │
+         ▼
+   main_rag.py calls agent_rag.py (Agent orchestrator)
+         │
+         ▼
+   agent_rag.py queries retriever_rag.py for relevant SOP chunks
+         │
+         └──► retriever_rag.py searches sop_rag.py (chunks loaded from sop.json)
+         │
+         ▼
+   agent_rag.py builds the prompt (using prompts/system_prompt_rag.py)
+         │
+         ▼
+   agent_rag.py sends prompt & history to LLM (Ollama / OpenAI)
+         │
+         ▼
+   LLM returns structured JSON response back to agent_rag.py
+         │
+         ▼
+   agent_rag.py processes JSON state & routes output:
+         ├── Normal Case (Qualifying/FAQ):
+         │     └── Update qualification memory & print reply in main_rag.py
+         │
+         ├── Escalation Case (Unlisted info, low confidence, or user frustration):
+         │     └── Call logger_rag.py to record escalation & notify handoff
+         │
+         └── Session Complete Case (Polite closing / goodbye):
+               └── Call agent_rag.py to generate summary, call logger_rag.py to save, & exit
+```
+
 
 ### Module Execution & Case Routing Rules:
 
