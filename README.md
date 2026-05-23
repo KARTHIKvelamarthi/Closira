@@ -37,33 +37,33 @@ When a user sends a message, execution flows between the Python modules based on
 
 ```mermaid
 flowchart TD
-    UserInput([User Message]) ──► MainRAG["main_rag.py (CLI Chat Loop)"]
+    UserInput([User Message]) --> MainRAG["main_rag.py (CLI Chat Loop)"]
     
-    MainRAG ──►|1. Calls chat| AgentRAG["agent_rag.py (ClosiraRAGAgent)"]
+    MainRAG -->|1. Calls chat| AgentRAG["agent_rag.py (ClosiraRAGAgent)"]
     
-    AgentRAG ──►|2. Calls retrieve| RetrieverRAG["retriever_rag.py (ClosiraRAGRetriever)"]
+    AgentRAG -->|2. Calls retrieve| RetrieverRAG["retriever_rag.py (ClosiraRAGRetriever)"]
     
     %% SOP parsing dependency
-    RetrieverRAG ──►|3. Loads chunks| SopRAG["sop_rag.py (Chunker)"]
-    SopRAG ──►|4. Reads| SopJson[(sop.json)]
+    RetrieverRAG -->|3. Loads chunks| SopRAG["sop_rag.py (Chunker)"]
+    SopRAG -->|4. Reads| SopJson[(sop.json)]
     
     %% Context Construction
-    RetrieverRAG ──►|5. Returns matched chunks| AgentRAG
-    AgentRAG ──►|6. Generates prompt| SysPrompt["prompts/system_prompt_rag.py (build_system_prompt_rag)"]
+    RetrieverRAG -->|5. Returns matched chunks| AgentRAG
+    AgentRAG -->|6. Generates prompt| SysPrompt["prompts/system_prompt_rag.py (build_system_prompt_rag)"]
     
     %% LLM Execution
-    AgentRAG ──►|7. Sends context + history| LLM([Local Llama or OpenAI])
-    LLM ──►|8. Returns structured JSON| AgentRAG
+    AgentRAG -->|7. Sends context + history| LLM([Local Llama or OpenAI])
+    LLM -->|8. Returns structured JSON| AgentRAG
     
     %% Case routing
-    AgentRAG ──►|Case: Normal Turn| MainRAG
+    AgentRAG -->|Case: Normal Turn| MainRAG
     
-    AgentRAG ──►|Case: Escalation (low confidence / unlisted detail)| LoggerRAG["logger_rag.py (log_escalation)"]
-    LoggerRAG ──►|Notifies handoff| MainRAG
+    AgentRAG -->|Case: Escalation (low confidence / unlisted detail)| LoggerRAG["logger_rag.py (log_escalation)"]
+    LoggerRAG -->|Notifies handoff| MainRAG
     
-    AgentRAG ──►|Case: Session Complete (closing input)| MainRAGSummary["main_rag.py (Triggers generate_summary)"]
-    MainRAGSummary ──►|Requests final summary| AgentRAG
-    AgentRAG ──►|Writes summary| LoggerRAG
+    AgentRAG -->|Case: Session Complete (closing input)| MainRAGSummary["main_rag.py (Triggers generate_summary)"]
+    MainRAGSummary -->|Requests final summary| AgentRAG
+    AgentRAG -->|Writes summary| LoggerRAG
 ```
 
 ### Module Execution & Case Routing Rules:
